@@ -178,27 +178,27 @@ class objdictedit(wx.Frame, NodeEditorTemplate):
         parent.Append(menu=self.HelpMenu, title=_('Help'))
 
     def _init_coll_FileMenu_Items(self, parent):
-        parent.Append(help='', id=wx.ID_NEW,
-              kind=wx.ITEM_NORMAL, text=_('New\tCTRL+N'))
-        parent.Append(help='', id=wx.ID_OPEN,
-              kind=wx.ITEM_NORMAL, text=_('Open\tCTRL+O'))
-        parent.Append(help='', id=wx.ID_CLOSE,
-              kind=wx.ITEM_NORMAL, text=_('Close\tCTRL+W'))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_NEW,
+              kind=wx.ITEM_NORMAL, text=_('New\tCTRL+N')))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_OPEN,
+              kind=wx.ITEM_NORMAL, text=_('Open\tCTRL+O')))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_CLOSE,
+              kind=wx.ITEM_NORMAL, text=_('Close\tCTRL+W')))
         parent.AppendSeparator()
-        parent.Append(help='', id=wx.ID_SAVE,
-              kind=wx.ITEM_NORMAL, text=_('Save\tCTRL+S'))
-        parent.Append(help='', id=wx.ID_SAVEAS,
-              kind=wx.ITEM_NORMAL, text=_('Save As...\tALT+S'))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_SAVE,
+              kind=wx.ITEM_NORMAL, text=_('Save\tCTRL+S')))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_SAVEAS,
+              kind=wx.ITEM_NORMAL, text=_('Save As...\tALT+S')))
         parent.AppendSeparator()
-        parent.Append(help='', id=ID_OBJDICTEDITFILEMENUIMPORTEDS,
-              kind=wx.ITEM_NORMAL, text=_('Import EDS file'))
-        parent.Append(help='', id=ID_OBJDICTEDITFILEMENUEXPORTEDS,
-              kind=wx.ITEM_NORMAL, text=_('Export to EDS file'))
-        parent.Append(help='', id=ID_OBJDICTEDITFILEMENUEXPORTC,
-              kind=wx.ITEM_NORMAL, text=_('Build Dictionary\tCTRL+B'))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITFILEMENUIMPORTEDS,
+              kind=wx.ITEM_NORMAL, text=_('Import EDS file')))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITFILEMENUEXPORTEDS,
+              kind=wx.ITEM_NORMAL, text=_('Export to EDS file')))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITFILEMENUEXPORTC,
+              kind=wx.ITEM_NORMAL, text=_('Build Dictionary\tCTRL+B')))
         parent.AppendSeparator()
-        parent.Append(help='', id=wx.ID_EXIT,
-              kind=wx.ITEM_NORMAL, text=_('Exit'))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_EXIT,
+              kind=wx.ITEM_NORMAL, text=_('Exit')))
         self.Bind(wx.EVT_MENU, self.OnNewMenu, id=wx.ID_NEW)
         self.Bind(wx.EVT_MENU, self.OnOpenMenu, id=wx.ID_OPEN)
         self.Bind(wx.EVT_MENU, self.OnCloseMenu, id=wx.ID_CLOSE)
@@ -213,22 +213,22 @@ class objdictedit(wx.Frame, NodeEditorTemplate):
         self.Bind(wx.EVT_MENU, self.OnQuitMenu, id=wx.ID_EXIT)
 
     def _init_coll_EditMenu_Items(self, parent):
-        parent.Append(help='', id=wx.ID_REFRESH,
-              kind=wx.ITEM_NORMAL, text=_('Refresh\tCTRL+R'))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_REFRESH,
+              kind=wx.ITEM_NORMAL, text=_('Refresh\tCTRL+R')))
         parent.AppendSeparator()
-        parent.Append(help='', id=wx.ID_UNDO,
-              kind=wx.ITEM_NORMAL, text=_('Undo\tCTRL+Z'))
-        parent.Append(help='', id=wx.ID_REDO,
-              kind=wx.ITEM_NORMAL, text=_('Redo\tCTRL+Y'))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_UNDO,
+              kind=wx.ITEM_NORMAL, text=_('Undo\tCTRL+Z')))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_REDO,
+              kind=wx.ITEM_NORMAL, text=_('Redo\tCTRL+Y')))
         parent.AppendSeparator()
-        parent.Append(help='', id=ID_OBJDICTEDITEDITMENUNODEINFOS,
-              kind=wx.ITEM_NORMAL, text=_('Node infos'))
-        parent.Append(help='', id=ID_OBJDICTEDITEDITMENUDS301PROFILE,
-              kind=wx.ITEM_NORMAL, text=_('DS-301 Profile'))
-        parent.Append(help='', id=ID_OBJDICTEDITEDITMENUDS302PROFILE,
-              kind=wx.ITEM_NORMAL, text=_('DS-302 Profile'))
-        parent.Append(help='', id=ID_OBJDICTEDITEDITMENUOTHERPROFILE,
-              kind=wx.ITEM_NORMAL, text=_('Other Profile'))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITEDITMENUNODEINFOS,
+              kind=wx.ITEM_NORMAL, text=_('Node infos')))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITEDITMENUDS301PROFILE,
+              kind=wx.ITEM_NORMAL, text=_('DS-301 Profile')))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITEDITMENUDS302PROFILE,
+              kind=wx.ITEM_NORMAL, text=_('DS-302 Profile')))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITEDITMENUOTHERPROFILE,
+              kind=wx.ITEM_NORMAL, text=_('Other Profile')))
         self.Bind(wx.EVT_MENU, self.OnRefreshMenu, id=wx.ID_REFRESH)
         self.Bind(wx.EVT_MENU, self.OnUndoMenu, id=wx.ID_UNDO)
         self.Bind(wx.EVT_MENU, self.OnRedoMenu, id=wx.ID_REDO)
@@ -242,18 +242,18 @@ class objdictedit(wx.Frame, NodeEditorTemplate):
               id=ID_OBJDICTEDITEDITMENUOTHERPROFILE)
 
     def _init_coll_AddMenu_Items(self, parent):
-        parent.Append(help='', id=ID_OBJDICTEDITADDMENUSDOSERVER,
-              kind=wx.ITEM_NORMAL, text=_('SDO Server'))
-        parent.Append(help='', id=ID_OBJDICTEDITADDMENUSDOCLIENT,
-              kind=wx.ITEM_NORMAL, text=_('SDO Client'))
-        parent.Append(help='', id=ID_OBJDICTEDITADDMENUPDOTRANSMIT,
-              kind=wx.ITEM_NORMAL, text=_('PDO Transmit'))
-        parent.Append(help='', id=ID_OBJDICTEDITADDMENUPDORECEIVE,
-              kind=wx.ITEM_NORMAL, text=_('PDO Receive'))
-        parent.Append(help='', id=ID_OBJDICTEDITADDMENUMAPVARIABLE,
-              kind=wx.ITEM_NORMAL, text=_('Map Variable'))
-        parent.Append(help='', id=ID_OBJDICTEDITADDMENUUSERTYPE,
-              kind=wx.ITEM_NORMAL, text=_('User Type'))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITADDMENUSDOSERVER,
+              kind=wx.ITEM_NORMAL, text=_('SDO Server')))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITADDMENUSDOCLIENT,
+              kind=wx.ITEM_NORMAL, text=_('SDO Client')))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITADDMENUPDOTRANSMIT,
+              kind=wx.ITEM_NORMAL, text=_('PDO Transmit')))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITADDMENUPDORECEIVE,
+              kind=wx.ITEM_NORMAL, text=_('PDO Receive')))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITADDMENUMAPVARIABLE,
+              kind=wx.ITEM_NORMAL, text=_('Map Variable')))
+        parent.Append(wx.MenuItem(helpString='', id=ID_OBJDICTEDITADDMENUUSERTYPE,
+              kind=wx.ITEM_NORMAL, text=_('User Type')))
         self.Bind(wx.EVT_MENU, self.OnAddSDOServerMenu,
               id=ID_OBJDICTEDITADDMENUSDOSERVER)
         self.Bind(wx.EVT_MENU, self.OnAddSDOClientMenu,
@@ -268,15 +268,15 @@ class objdictedit(wx.Frame, NodeEditorTemplate):
               id=ID_OBJDICTEDITADDMENUUSERTYPE)
 
     def _init_coll_HelpMenu_Items(self, parent):
-        parent.Append(help='', id=wx.ID_HELP,
-              kind=wx.ITEM_NORMAL, text=_('DS-301 Standard\tF1'))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_HELP,
+              kind=wx.ITEM_NORMAL, text=_('DS-301 Standard\tF1')))
         self.Bind(wx.EVT_MENU, self.OnHelpDS301Menu, id=wx.ID_HELP)
-        parent.Append(help='', id=wx.ID_HELP_CONTEXT,
-              kind=wx.ITEM_NORMAL, text=_('CAN Festival Docs\tF2'))
+        parent.Append(wx.MenuItem(helpString='', id=wx.ID_HELP_CONTEXT,
+              kind=wx.ITEM_NORMAL, text=_('CAN Festival Docs\tF2')))
         self.Bind(wx.EVT_MENU, self.OnHelpCANFestivalMenu, id=wx.ID_HELP_CONTEXT)
         if Html_Window and self.ModeSolo:
-            parent.Append(help='', id=wx.ID_ABOUT,
-                  kind=wx.ITEM_NORMAL, text=_('About'))
+            parent.Append(wx.MenuItem(helpString='', id=wx.ID_ABOUT,
+                  kind=wx.ITEM_NORMAL, text=_('About')))
             self.Bind(wx.EVT_MENU, self.OnAboutMenu, id=wx.ID_ABOUT)
 
     def _init_coll_HelpBar_Fields(self, parent):
