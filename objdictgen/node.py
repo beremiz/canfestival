@@ -1086,7 +1086,7 @@ class Node:
         for mapping in self.GetMappings():
             list.extend(FindTypeList(mapping))
         list.sort()
-        return ",".join(list)
+        return list
 
     def GenerateMapName(self, name, index, subindex):
         return "%s (0x%4.4X)" % (name, index)
@@ -1130,7 +1130,7 @@ class Node:
     """
     def GetMapList(self):
         list = [_("None")] + [self.GenerateMapName(name, index, subIndex) for index, subIndex, size, name in self.GetMapVariableList()]
-        return ",".join(list)
+        return list
 
 def BE_to_LE(value):
     """

@@ -104,7 +104,7 @@ class NodeEditorTemplate:
                     self.Frame.AddMenu.AppendSeparator()
                     for text, indexes in self.Manager.GetCurrentSpecificMenu():
                         new_id = wx.NewId()
-                        self.Frame.AddMenu.Append(help='', id=new_id, kind=wx.ITEM_NORMAL, text=text)
+                        self.Frame.AddMenu.Append(wx.MenuItem(helpString='', id=new_id, kind=wx.ITEM_NORMAL, text=text))
                         self.Frame.Bind(wx.EVT_MENU, self.GetProfileCallBack(text), id=new_id)
                 else:
                     edititem.SetText(_("Other Profile"))
